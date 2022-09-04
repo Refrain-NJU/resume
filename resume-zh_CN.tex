@@ -4,59 +4,25 @@
 
 \documentclass{resume}
 \usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
-% \usepackage{NotoSansSC_external}
-% \usepackage{NotoSerifCJKsc_external}
-% \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
 \usepackage{linespacing_fix} % disable extra space before next section
 \usepackage{cite}
 
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
-\name{你的大名}
+\name{谭子熠}
 
 \basicInfo{
-  \email{yuanbin2014@gmail.com} \textperiodcentered\ 
-  \phone{(+86) 131-221-87xxx} \textperiodcentered\ 
-  \linkedin[billryan8]{https://www.linkedin.com/in/billryan8}}
+  \email{ajb459684460@gmail.com} \textperiodcentered\ 
+  \phone{(+86) } \textperiodcentered\ 
+  \github[Ziy1-Tan]{https://github.com/Ziy1-Tan}}
  
 \section{\faGraduationCap\  教育背景}
-\datedsubsection{\textbf{上海交通大学}, 上海}{2013 -- 至今}
-\textit{在读硕士研究生}\ 信息与通信工程, 预计 2016 年 3 月毕业
-\datedsubsection{\textbf{西安电子科技大学}, 西安, 陕西}{2009 -- 2013}
-\textit{学士}\ 通信工程
-
-\section{\faUsers\ 实习/项目经历}
-\datedsubsection{\textbf{黑科技公司} 上海}{2015年3月 -- 2015年5月}
-\role{实习}{经理: 高富帅}
-xxx后端开发
-\begin{itemize}
-  \item 实现了 xxx 特性
-  \item 后台资源占用率减少8\%
-  \item xxx
-\end{itemize}
-
-\datedsubsection{\textbf{分布式科学上网姿势}}{2014年6月 -- 至今}
-\role{Golang, Linux}{个人项目，和富帅糕合作开发}
-\begin{onehalfspacing}
-分布式负载均衡科学上网姿势, https://github.com/cyfdecyf/cow
-\begin{itemize}
-  \item 修复了连接未正常关闭导致文件描述符耗尽的 bug
-  \item 使用Chord 哈希 URL, 实现稳定可靠地分流
-  \item xxx (尽量使用量化的客观结果)
-\end{itemize}
-\end{onehalfspacing}
-
-\datedsubsection{\textbf{\LaTeX\ 简历模板}}{2015 年5月 -- 至今}
-\role{\LaTeX, Python}{个人项目}
-\begin{onehalfspacing}
-优雅的 \LaTeX\ 简历模板, https://github.com/billryan/resume
-\begin{itemize}
-  \item 容易定制和扩展
-  \item 完善的 Unicode 字体支持，使用 \XeLaTeX\ 编译
-  \item 支持 FontAwesome 4.5.0
-\end{itemize}
-\end{onehalfspacing}
+\datedsubsection{\textbf{华中科技大学}, 武汉, 湖北}{2021 -- 2024}
+\textit{硕士}\ 计算机系统结构
+\datedsubsection{\textbf{东北大学}, 沈阳, 辽宁}{2017 -- 2021}
+\textit{学士}\ 软件工程
 
 % Reference Test
 %\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
@@ -65,28 +31,65 @@ xxx后端开发
 %  \item main contribution
 %\end{itemize}
 
-\section{\faCogs\ IT 技能}
+\section{\faCogs\ 技能}
 % increase linespacing [parsep=0.5ex]
 \begin{itemize}[parsep=0.5ex]
-  \item 编程语言: C == Python > C++ > Java
-  \item 平台: Linux
-  \item 开发: xxx
+  \item 熟悉C/C++编程语言，了解Go、Python等;
+  \item 熟悉Linux环境下常用命令和相关工具的使用(gdb、git、vim等);
+  \item 熟悉论文阅读，能够快速梳理文章的gap、related work和insight;
+  \item 了解latex、dblp、google scholar等科研工具使用;
+  \item 具有Linux环境下大型C++系统编译、调试和开发经验，具有存储系统开发经验;
 \end{itemize}
+
+\section{\faUsers\ 实习/项目经历}
+\datedsubsection{\textbf{\href{https://summerofcode.withgoogle.com/programs/2022/projects/VIJfR79a}{MariaDB - Google Summer of Code}} 武汉}{2022.5 -- 2022.9}
+% \role{实习（远程）}{Contributor}
+Columnstore(MCS) 是一个大规模的并行分布式数据架构的列式存储引擎。个人主要负责MCS Select Handler下分布式JSON Functions的设计与实现。
+\begin{itemize}
+  \item \textbf{效果：}支持在MCS的Select SQL语句中使用JSON Functions;
+  \item 针对JSON和MariaDB Boolean不完全兼容问题进行处理，改造后具有完全兼容性;
+  \item 利用Exception、RAII等技术对C代码进行封装，代码具备更强的exception-safe和resource-safe
+  \item 基于缓存技术缓存函数执行过程中的常量值，大大提高了函数执行效率;
+  \item 利用Mysql-test-run测试框架对函数进行SQL Test，最终测试覆盖率达到90\%
+  \item \textbf{成果：}\github[PR]{https://github.com/mariadb-corporation/mariadb-columnstore-engine/pull/2425}(8600行,其中测试2000行)成功合入主分支
+  \item 开发过程额外提交的3个patch均被合并：
+  \begin{itemize}
+    \item \github[Refactor: remove redundant assignments of JSON\_MERGE\_PATCH]{https://github.com/MariaDB/server/pull/2209}
+    \item \github[MDEV-28947 JSON\_TYPE result is turncated, charset max length should be considered]{https://github.com/MariaDB/server/pull/2172}
+    \item \github[MDEV-29264: JSON function overflow error based on LONGTEXT field]{https://github.com/MariaDB/server/pull/2226}
+  \end{itemize}
+  \item \textbf{收获：}对于SQL解析和SQL函数执行过程有了更深的理解，C/C++代码的编译和调试更加熟练，对于测试用例编写还需要更完善
+
+\end{itemize}
+
+\datedsubsection{\textbf{\href{https://summer-ospp.ac.cn/}{JuiceFS - 中科院开源软件供应链点亮计划}} 武汉}{2022.6 -- 2022.10}
+% \role{实习（远程）}{Contributor}
+JuiceFS 是一款「数据」与「元数据」分离存储的架构高性能POSIX文件系统。个人主要负责JuiceFS doctor子命令的设计与实现
+\begin{onehalfspacing}
+\begin{itemize}
+  \item \textbf{效果：}用户可以通过doctor子命令收集系统各个维度信息，以更好地定位错误
+  \item 支持收集OS、架构、JuiceFS版本、日志、元数据引擎、挂载点配置和pprof统计信息等
+  \item \textbf{成果：}测试覆盖率90\%，项目通过最终评估，\github[PR]{https://github.com/juicedata/juicefs/pull/2360}成功合入主分支
+  \item \textbf{收获：}初步了解测试驱动开发(TDD)模式，对文件存储有了进一步的理解，对利用线程同步、线程通信和线程池等多线程并发技术来提升效率的方式也有了一定的理解。
+\end{itemize}
+\end{onehalfspacing}
+
 
 \section{\faHeartO\ 获奖情况}
-\datedline{\textit{第一名}, xxx 比赛}{2013 年6 月}
-\datedline{其他奖项}{2015}
+\datedline{\textit{复赛32强(32/478)}, 华为软件精英挑战赛武长赛区}{2022 年4 月}
+\datedline{华中科技大学社会实践优秀个人}{2022 年3 月}
+\datedline{华中科技大学研究生一等奖学金}{2021 年9 月}
 
-\section{\faInfo\ 其他}
-% increase linespacing [parsep=0.5ex]
-\begin{itemize}[parsep=0.5ex]
-  \item 技术博客: http://blog.yours.me
-  \item GitHub: https://github.com/username
-  \item 语言: 英语 - 熟练(TOEFL xxx)
-\end{itemize}
 
-%% Reference
-%\newpage
-%\bibliographystyle{IEEETran}
-%\bibliography{mycite}
+% \section{\faInfo\ 其他}
+% % increase linespacing [parsep=0.5ex]
+% \begin{itemize}[parsep=0.5ex]
+%   \item 语言: CET6
+% \end{itemize}
+
+% %% Reference
+% %\newpage
+% %\bibliographystyle{IEEETran}
+% %\bibliography{mycite}
 \end{document}
+
