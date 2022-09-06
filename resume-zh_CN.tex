@@ -15,7 +15,7 @@
 
 \basicInfo{
   \email{ajb459684460@gmail.com} \textperiodcentered\ 
-  \phone{(+86) } \textperiodcentered\ 
+  \phone{(+86) 13840304617} \textperiodcentered\ 
   \github[Ziy1-Tan]{https://github.com/Ziy1-Tan}}
  
 \section{\faGraduationCap\  教育背景}
@@ -38,7 +38,7 @@
   \item 熟悉Linux环境下常用命令和相关工具的使用(gdb、git、vim等);
   \item 熟悉论文阅读，能够快速梳理文章的gap、related work和insight;
   \item 了解latex、dblp、google scholar等科研工具使用;
-  \item 具有Linux环境下大型C++系统编译、调试和开发经验，具有存储系统开发经验;
+  \item 具有Linux环境下大型系统编译、调试和开发经验，具有存储系统开发经验;
 \end{itemize}
 
 \section{\faUsers\ 实习/项目经历}
@@ -48,7 +48,7 @@ Columnstore(MCS) 是一个大规模的并行分布式数据架构的列式存储
 \begin{itemize}
   \item \textbf{效果：}支持在MCS的Select SQL语句中使用JSON Functions;
   \item 针对JSON和MariaDB Boolean不完全兼容问题进行处理，改造后具有完全兼容性;
-  \item 利用Exception、RAII等技术对C代码进行封装，代码具备更强的exception-safe和resource-safe
+  \item 利用Exception、RAII等技术对代码进行封装，封装后具备更强的exception-safe和resource-safe
   \item 基于缓存技术缓存函数执行过程中的常量值，大大提高了函数执行效率;
   \item 利用Mysql-test-run测试框架对函数进行SQL Test，最终测试覆盖率达到90\%
   \item \textbf{成果：}\github[PR]{https://github.com/mariadb-corporation/mariadb-columnstore-engine/pull/2425}(8600行,其中测试2000行)成功合入主分支
@@ -58,19 +58,19 @@ Columnstore(MCS) 是一个大规模的并行分布式数据架构的列式存储
     \item \github[MDEV-28947 JSON\_TYPE result is turncated, charset max length should be considered]{https://github.com/MariaDB/server/pull/2172}
     \item \github[MDEV-29264: JSON function overflow error based on LONGTEXT field]{https://github.com/MariaDB/server/pull/2226}
   \end{itemize}
-  \item \textbf{收获：}对于SQL解析和SQL函数执行过程有了更深的理解，C/C++代码的编译和调试更加熟练，对于测试用例编写还需要更完善
+  \item \textbf{收获：}对于JSON和SQL函数解析执行过程有了更深的理解，对于C/C++代码的编译和调试更加熟练，对于测试用例编写有了一定的了解
 
 \end{itemize}
 
 \datedsubsection{\textbf{\href{https://summer-ospp.ac.cn/}{JuiceFS - 中科院开源软件供应链点亮计划}} 武汉}{2022.6 -- 2022.10}
 % \role{实习（远程）}{Contributor}
-JuiceFS 是一款「数据」与「元数据」分离存储的架构高性能POSIX文件系统。个人主要负责JuiceFS doctor子命令的设计与实现
+JuiceFS 是一款「数据」与「元数据」分离存储的架构高性能POSIX文件系统。个人主要负责JuiceFS doctor子命令的设计与实现。
 \begin{onehalfspacing}
 \begin{itemize}
   \item \textbf{效果：}用户可以通过doctor子命令收集系统各个维度信息，以更好地定位错误
   \item 支持收集OS、架构、JuiceFS版本、日志、元数据引擎、挂载点配置和pprof统计信息等
   \item \textbf{成果：}测试覆盖率90\%，项目通过最终评估，\github[PR]{https://github.com/juicedata/juicefs/pull/2360}成功合入主分支
-  \item \textbf{收获：}初步了解测试驱动开发(TDD)模式，对文件存储有了进一步的理解，对利用线程同步、线程通信和线程池等多线程并发技术来提升效率的方式也有了一定的理解。
+  \item \textbf{收获：}对分布式文件存储架构有了进一步的理解，对线程同步、线程通信和线程池等多线程并发技术有了进一步的认识，初步了解测试驱动开发(TDD)模式。
 \end{itemize}
 \end{onehalfspacing}
 
