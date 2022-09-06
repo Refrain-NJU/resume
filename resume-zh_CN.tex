@@ -14,10 +14,10 @@
 \name{谭子熠}
 
 \basicInfo{
-  \email{ajb459684460@gmail.com} \textperiodcentered\ 
-  \phone{(+86) } \textperiodcentered\ 
+  \email{m202173651@hust.edu.cn} \textperiodcentered\
+  \phone{(+86) 13840304617} \textperiodcentered\
   \github[Ziy1-Tan]{https://github.com/Ziy1-Tan}}
- 
+
 \section{\faGraduationCap\  教育背景}
 \datedsubsection{\textbf{华中科技大学}, 武汉, 湖北}{2021 -- 2024}
 \textit{硕士}\ 计算机系统结构
@@ -34,10 +34,10 @@
 \section{\faCogs\ 技能}
 % increase linespacing [parsep=0.5ex]
 \begin{itemize}[parsep=0.5ex]
+  \item 熟悉论文阅读，能够快速梳理文章的gap、related work和insight;
+  \item 了解latex、dblp、google scholar等科研工具使用
   \item 熟悉C/C++编程语言，了解Go、Python等;
   \item 熟悉Linux环境下常用命令和相关工具的使用(gdb、git、vim等);
-  \item 熟悉论文阅读，能够快速梳理文章的gap、related work和insight;
-  \item 了解latex、dblp、google scholar等科研工具使用;
   \item 具有Linux环境下大型C++系统编译、调试和开发经验，具有存储系统开发经验;
 \end{itemize}
 
@@ -46,19 +46,19 @@
 % \role{实习（远程）}{Contributor}
 Columnstore(MCS) 是一个大规模的并行分布式数据架构的列式存储引擎。个人主要负责MCS Select Handler下分布式JSON Functions的设计与实现。
 \begin{itemize}
-  \item \textbf{效果：}支持在MCS的Select SQL语句中使用JSON Functions;
-  \item 针对JSON和MariaDB Boolean不完全兼容问题进行处理，改造后具有完全兼容性;
-  \item 利用Exception、RAII等技术对C代码进行封装，代码具备更强的exception-safe和resource-safe
-  \item 基于缓存技术缓存函数执行过程中的常量值，大大提高了函数执行效率;
-  \item 利用Mysql-test-run测试框架对函数进行SQL Test，最终测试覆盖率达到90\%
-  \item \textbf{成果：}\github[PR]{https://github.com/mariadb-corporation/mariadb-columnstore-engine/pull/2425}(8600行,其中测试2000行)成功合入主分支
+  \item 设计并实现了一系列MCS Select子句下JSON Functions，与MariaDB中表现一致;
+  \item 针对JSON和MariaDB Boolean不兼容问题进行适配，使之具有完全兼容性;
+  \item 利用Exception、RAII等特性进行封装，封装后的代码有更强的exception-safe和resource-safe
+  \item 基于缓存原理对函数执行过程的常量值进行缓存，大大提高了函数的执行效率;
+  \item 利用Mysql-test-run测试框架对函数进行SQL Test，最终测试覆盖率达到90\%;
+  \item \textbf{成果：}\github[PR]{https://github.com/mariadb-corporation/mariadb-columnstore-engine/pull/2425}(8600行,其中测试2000行)成功合入主分支;
   \item 开发过程额外提交的3个patch均被合并：
-  \begin{itemize}
-    \item \github[Refactor: remove redundant assignments of JSON\_MERGE\_PATCH]{https://github.com/MariaDB/server/pull/2209}
-    \item \github[MDEV-28947 JSON\_TYPE result is turncated, charset max length should be considered]{https://github.com/MariaDB/server/pull/2172}
-    \item \github[MDEV-29264: JSON function overflow error based on LONGTEXT field]{https://github.com/MariaDB/server/pull/2226}
-  \end{itemize}
-  \item \textbf{收获：}对于SQL解析和SQL函数执行过程有了更深的理解，C/C++代码的编译和调试更加熟练，对于测试用例编写还需要更完善
+        \begin{itemize}
+          \item \github[Refactor: remove redundant assignments of JSON\_MERGE\_PATCH]{https://github.com/MariaDB/server/pull/2209};
+          \item \github[MDEV-28947 JSON\_TYPE result is turncated, charset max length should be considered]{https://github.com/MariaDB/server/pull/2172};
+          \item \github[MDEV-29264: JSON function overflow error based on LONGTEXT field]{https://github.com/MariaDB/server/pull/2226};
+        \end{itemize}
+  \item \textbf{收获：}对于JSON和SQL函数的解析执行过程有了更深的理解，对于C/C++代码的编译和调试有了更多心得，对于测试用例设计有了进一步了解;
 
 \end{itemize}
 
@@ -66,12 +66,12 @@ Columnstore(MCS) 是一个大规模的并行分布式数据架构的列式存储
 % \role{实习（远程）}{Contributor}
 JuiceFS 是一款「数据」与「元数据」分离存储的架构高性能POSIX文件系统。个人主要负责JuiceFS doctor子命令的设计与实现
 \begin{onehalfspacing}
-\begin{itemize}
-  \item \textbf{效果：}用户可以通过doctor子命令收集系统各个维度信息，以更好地定位错误
-  \item 支持收集OS、架构、JuiceFS版本、日志、元数据引擎、挂载点配置和pprof统计信息等
-  \item \textbf{成果：}测试覆盖率90\%，项目通过最终评估，\github[PR]{https://github.com/juicedata/juicefs/pull/2360}成功合入主分支
-  \item \textbf{收获：}初步了解测试驱动开发(TDD)模式，对文件存储有了进一步的理解，对利用线程同步、线程通信和线程池等多线程并发技术来提升效率的方式也有了一定的理解。
-\end{itemize}
+  \begin{itemize}
+    \item 设计并实现了doctor子命令，能够收集系统各个维度信息，以更好地定位错误;
+    \item 支持收集OS、架构、JuiceFS版本、日志、元数据引擎、挂载点配置和pprof统计信息等;
+    \item \textbf{成果：}测试覆盖率90\%，项目已通过多轮code review，\github[PR]{https://github.com/juicedata/juicefs/pull/2360}即将合入主分支;
+    \item \textbf{收获：}对线程同步、线程通信和线程池等多线程并发技术有了更深的理解，对文件存储有了进一步的理解，初步了解测试驱动开发(TDD)模式;
+  \end{itemize}
 \end{onehalfspacing}
 
 
