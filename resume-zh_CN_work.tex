@@ -26,18 +26,17 @@
 
 
 \section{\faUsers\ 实习/项目经历}
-\datedsubsection{\underline{\textbf{\href{https://summerofcode.withgoogle.com/programs/2022/projects/VIJfR79a}{MariaDB - Google Summer of Code}}}}{2022.5 -- 2022.9}
+\datedsubsection{\underline{\textbf{\href{https://summerofcode.withgoogle.com/programs/2022/projects/VIJfR79a}{MariaDB - Google Summer of Code}}（C/C++、SQL、JSON）}}{2022.5 -- 2022.9}
 % \role{实习（远程）}{Contributor}
-Columnstore基于MairaDB构建的大规模并行，高性能，压缩，分布式开源列式存储引擎。本人主要负责Columnstore SELECT子句下JSON Functions的设计与实现。
+共有5,155份注册人员，其中1209份申请被Google接收\textbf{（中选率23\%）}。ColumnStore是基于MariaDB构建的分布式列式存储引擎，使得MariaDB具备快速大规模数据分析的能力。
 
 \begin{onehalfspacing}
   \begin{itemize}
-    \item 设计并实现了一系列SELECT子句下JSON Functions，针对不同编码数据均表现良好;
-    \item 利用Exception、RAII进行再封装，封装后的资源有具备更强的内聚性和Resource-safe;
-    \item 针对JSON和MariaDB Boolean不兼容问题进行适配，使之具有完全兼容性;
-    \item 针对JSON Function执行过程中的常量参数进行缓存，提高了函数的执行效率;
-    \item 利用Mysql-test-run测试框架对函数进行SQL Test，测试覆盖了函数关键分支和边缘分支;
-    \item \textbf{成果：}\github[PR]{https://github.com/mariadb-corporation/mariadb-columnstore-engine/pull/2425}(共8600+行，测试2500+行)成功合入主分支，最终在Columnstore 22.08.2发布;
+    \item 完成了ColumnStore SELECT子句下JSON Functions的设计与实现，针对不同编码表现良好;
+    \item 利用Exception和RAII进行封装，封装后的资源具备更强的\textbf{内聚性}和\textbf{Resource-safe};
+    \item 针对JSON和内置Boolean类型不兼容情况进行类型适配，使之具有完全兼容性;
+    \item 利用Mysql-test-run测试框架对函数进行SQL Test，测试覆盖了函数\textbf{关键分支}和\textbf{边缘分支};
+    \item \textbf{成果：}\github[PR]{https://github.com/mariadb-corporation/mariadb-columnstore-engine/pull/2425}(共8600+行，测试2500+行)成功\textbf{合入主分支}，最终在Columnstore 22.08.2发布;
     \item 开发阶段额外提交的3个patch均被合并：
           \begin{itemize}
             \item \github[MDEV-28947 JSON\_TYPE result is turncated, charset max length should be considered]{https://github.com/MariaDB/server/pull/2172};
@@ -48,17 +47,17 @@ Columnstore基于MairaDB构建的大规模并行，高性能，压缩，分布�
   \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\underline{\textbf{\href{https://summer-ospp.ac.cn\#/org/orgdetail/1bf2ea9b-fdf1-45a5-bbb1-d81827445986/}{JuiceFS - 中科院开源软件供应链点亮计划}}}}{2022.6 -- 2022.10}
+\datedsubsection{\underline{\textbf{\href{https://summer-ospp.ac.cn\#/org/orgdetail/1bf2ea9b-fdf1-45a5-bbb1-d81827445986/}{JuiceFS - 中科院开源软件供应链点亮计划}}（Golang、多线程、文件系统）}}{2022.6 -- 2022.10}
 % \role{实习（远程）}{Contributor}
-JuiceFS 是一款「数据」与「元数据」分离的架构高性能POSIX文件系统。本人主要负责doctor子命令的设计与实现。
+JuiceFS是一款数据与元数据分离的高性能POSIX文件系统。文件数据经切分保存在如S3等对象存储中，而元数据可以保存在Redis、MySQL等多种数据库中，根据使用场景灵活配置。
 
 \begin{onehalfspacing}
   \begin{itemize}
-    \item doctor命令可以收集并展示系统各个维度信息，以帮助开发者更好地了解系统并定位错误;
-    \item 命令支持收集OS、架构、JuiceFS版本、日志、挂载点配置信息和pprof统计信息等指标;
-    \item 利用并发和线程同步技术，将获取prometheus和pprof指标过程异步化，提高命令整体执行效率；
-    \item \textbf{成果：}测试覆盖了doctor的关键分支，\github[PR]{https://github.com/juicedata/juicefs/pull/2360}成功合入主分支;
-    \item \textbf{收获：}对线程同步、线程通信等多线程技术有了更深的理解，初步了解测试驱动开发(TDD)模式;
+    \item 完成了doctor命令的设计与实现，命令收集系统各个维度的信息，帮助更好地定位错误;
+    \item 命令支持收集内核、架构、JuiceFS版本、挂载点配置、日志和pprof统计信息等指标;
+    \item 利用并发和线程同步，将获取prometheus和pprof指标过程异步化，\textbf{提高命令执行效率};
+    \item \textbf{成果：}测试覆盖了doctor的关键分支，\github[PR]{https://github.com/juicedata/juicefs/pull/2360}成功\textbf{合入主分支};
+    \item \textbf{收获：}对线程同步等并发编程技术有了更深的理解，初步了解测试驱动开发(TDD)模式;
   \end{itemize}
 \end{onehalfspacing}
 
