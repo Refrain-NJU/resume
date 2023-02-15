@@ -39,7 +39,7 @@
           \item 修复了由于uint\_32计算溢出导致的JSON\_*结果被截断的问题;\enspace\githubicon{https://github.com/MariaDB/server/pull/2226}
           \item 重构了JSON\_MERGE\_PATCH，移除其中的冗余赋值操作;\enspace\githubicon{https://github.com/MariaDB/server/pull/2209}
         \end{itemize}
-  \item \textbf{收获:}加深了对JSON和SQL函数的解析执行过程的理解，对处理可变编码数据处理的实践理解，以及使用测试确保重构的初步认识.
+  \item \textbf{收获:}扩宽了对涉及深层调用栈问题的排查思路，对处理可变编码数据处理的实践理解，以及使用测试确保重构的初步认识.
 \end{itemize}
 \datedsubsection{\underline{\textbf{\href{https://summer-ospp.ac.cn\#/org/orgdetail/1bf2ea9b-fdf1-45a5-bbb1-d81827445986/}{JuiceFS - 中科院开源之夏}}}\enspace(Go、多线程、文件系统)}{2022.6 -- 2022.10}
 JuiceFS是一个数据/元数据分离架构的POSIX文件系统。JuiceFS高度用户友好且易于部署，对象存储服务和元数据引擎可根据用例灵活配置切换。
@@ -53,8 +53,8 @@ JuiceFS是一个数据/元数据分离架构的POSIX文件系统。JuiceFS高度
 \datedsubsection{\underline{\textbf{\href{https://github.com/opencurve/curve}{OpenCurve - CNCF Sandbox Project}}}}{2022.12 -- 至今}
 网易数帆团队开源的分布式存储系统，支持文件和块存储。与JuiceFS不同，Curve内置元数据引擎.
 \begin{itemize}[parsep=0.3ex]
-  \item \textbf{回滚支持:}实现支持回滚的创建FS操作，保证了功能的原子化，增量分支覆盖率$\geq$80\%;
-  \item \textbf{细粒度统计(进行中):}引入CopySet级用量统计，为保证\textbf{更精确的资源调度}提供了前置条件.
+  \item \textbf{回滚支持:}为创建FS操作添加回滚支持，保证了功能的原子化，\textbf{增量分支覆盖率$\geq$80\%};
+  \item \textbf{细粒度采样(进行中):}引入CopySet级指标采样，以保证\textbf{更精确的元数据平衡调度}.
 \end{itemize}
 \section{\faCogs\ 相关技能}
 \begin{itemize}[parsep=0.5ex]
