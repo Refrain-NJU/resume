@@ -53,8 +53,8 @@ JuiceFS是一个数据/元数据分离架构的POSIX文件系统。JuiceFS高度
 \datedsubsection{\underline{\textbf{\href{https://github.com/opencurve/curve}{OpenCurve - CNCF Sandbox Project}}}}{2022.12 -- 至今}
 网易数帆团队开源的分布式存储系统，支持文件和块存储。与JuiceFS不同，Curve内置元数据引擎.
 \begin{itemize}[parsep=0.3ex]
-  \item \textbf{回滚支持:}为创建FS操作添加回滚支持，保证了功能的原子化，\textbf{增量分支覆盖率$\geq$80\%};
-  \item \textbf{细粒度采样(进行中):}引入CopySet级指标采样，以保证\textbf{更精确的元数据平衡调度}.
+  \item \textbf{回滚支持:}为创建FS操作添加回滚支持，保证了资源的及时释放，\textbf{增量分支覆盖率$\geq$80\%};\enspace\githubicon{https://github.com/opencurve/curve/pull/2206}
+  \item \textbf{细粒度采样(进行中):}引入CopySet级指标收集，以保证\textbf{更精确的元数据平衡调度}.
 \end{itemize}
 \section{\faCogs\ 相关技能}
 \begin{itemize}[parsep=0.5ex]
