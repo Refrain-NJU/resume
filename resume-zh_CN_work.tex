@@ -4,7 +4,7 @@
 
 \documentclass{resume}
 \usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
-%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+% \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
 \usepackage{linespacing_fix} % disable extra space before next section
 \usepackage{cite}
 
@@ -32,7 +32,7 @@
 \begin{itemize}[parsep=0.3ex]
   \item \textbf{个人贡献:}设计实现了\verb|SELECT|子句中的JSON函数, 补全缺失的JSON函数部分;
   \item \textbf{资源封装:}利用Exception/RAII进行资源封装, 使之具备更强的\textbf{内聚性}和\textbf{资源安全性};
-  \item \textbf{变量优化:}完成\verb|malloc|到\verb|alloca|分配方式迁移，保证\textbf{小字符串处理}的效率和内存安全性;
+  \item \textbf{变量优化:}完成\verb|malloc|到\verb|alloca|分配的部分迁移，保证\textbf{小字符串处理}的效率和内存安全性;
   \item \textbf{类型适配:}适配JSON/MariaDB布尔类型兼容性问题, 确保对JSON类型的\textbf{全兼容};
   \item \textbf{完备测试:}利用内置测试框架MTR进行单元测试, 覆盖函数的\textbf{关键和边缘分支};
   \item \textbf{最终成果:} PR(测试2500行/共8600行)成功\textbf{合入主分支}, 最终在Release 22.08.2发布;\enspace\githubicon{https://github.com/mariadb-corporation/mariadb-columnstore-engine/pull/2425}
@@ -42,7 +42,6 @@
           \item 修复了由于\verb|uint_32|类型溢出导致JSON\_*结果被截断的问题;\enspace\githubicon{https://github.com/MariaDB/server/pull/2226}
           \item 重构了JSON\_MERGE\_PATCH, 移除其中的冗余赋值操作;\enspace\githubicon{https://github.com/MariaDB/server/pull/2209}
         \end{itemize}
-        % \item \textbf{收获:}扩宽了复杂问题的排查思路, 以及使用测试确保重构的初步认识.
 \end{itemize}
 \datedsubsection{\underline{\textbf{\href{https://summer-ospp.ac.cn\#/org/orgdetail/1bf2ea9b-fdf1-45a5-bbb1-d81827445986/}{JuiceFS - 中科院开源之夏}}}\quad Go / Concurrency / File system}{2022.6 -- 2022.10}
 JuiceFS是数据/元数据分离的分布式文件系统, 用户友好且易于部署, 存储和元数据服务可灵活配置切换.
@@ -51,7 +50,6 @@ JuiceFS是数据/元数据分离的分布式文件系统, 用户友好且易于�
   \item \textbf{多元采集:}支持Kernel / FS / Mount等信息的收集, 以及log / pprof等运行时指标的采样;
   \item \textbf{流程优化:}利用并发技术, 完成指标采样异步化改造, \textbf{保证执行效率和用户体验};
   \item \textbf{最终成果:}测试覆盖了doctor的关键分支, PR成功\textbf{合入主分支};\enspace\githubicon{https://github.com/juicedata/juicefs/pull/2360}
-        % \item \textbf{收获:}加深了对线程同步等并发技术的理解, 初步了解测试驱动开发(TDD)模式.
 \end{itemize}
 \datedsubsection{\underline{\textbf{\href{https://github.com/opencurve/curve}{Curve - CNCF Sandbox Project}}}}{2022.12 -- 至今}
 网易数帆团队开源的分布式存储系统, 支持文件和块存储. 与JuiceFS不同, Curve内置元数据引擎.
