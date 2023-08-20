@@ -14,60 +14,71 @@
 \name{谭子熠}
 
 \basicInfo{
-  \phone{(+86)13840304617} \textperiodcentered\
+  \phone{(+86)138-4030-4617} \textperiodcentered\
   \email{tanziyi0925@gmail.com} \textperiodcentered\
   \github[Ziy1-Tan]{https://github.com/Ziy1-Tan}
 }
 
-\section{\faGraduationCap\  教育背景}
-\datedsubsection{\textbf{华中科技大学}, 武汉, 湖北}{2021.9 -- 2024.6}
-\textit{硕士}\ 计算机系统结构
+\section{\faGraduationCap\ 教育背景}
+\datedsubsection{\textbf{华中科技大学（保研）}, 武汉, 湖北}{2021.9 -- 2024.6}
+\textit{工学硕士}\ 计算机系统结构, \textit{一等/腾讯奖学金, 华为软挑二等奖(获奖率6.6\%)}
 \datedsubsection{\textbf{东北大学}, 沈阳, 辽宁}{2017.9 -- 2021.6}
-\textit{学士}\ 软件工程, \textit{专业排名9\%, 优秀毕业生}
+\textit{工学学士}\ 软件工程, \textit{专业排名9\%, 优秀毕业生}
 
-\section{\faUsers\ 实习/项目经历}
-\datedsubsection{\underline{\textbf{\href{https://summerofcode.withgoogle.com/programs/2022/projects/VIJfR79a}{MariaDB - Google开源之夏}}}\quad C++ / SQL / JSON}{2022.6 -- 2022.9}
-全球知名开源活动, 已连续举办18年, 2022年共5,155次注册, 1209份申请被Google接纳, 大陆仅40人左右中选\textbf{(中选率3.3\%)}. ColumnStore是基于MariaDB构建的分布式列式存储引擎.
-\begin{itemize}[parsep=0.3ex]
-  \item \textbf{个人贡献:}设计并实现了\verb|SELECT|子句中的JSON函数, 实现了MariaDB的JSON函数下推;
-  \item \textbf{资源封装:}利用Exception/RAII进行资源封装, 使之具备更强的\textbf{内聚性}和\textbf{资源安全性};
-  \item \textbf{变量优化:}完成\verb|malloc|到\verb|alloca|分配的部分迁移，保证\textbf{小字符串处理}的效率和内存安全性;
+\section{\faBuilding\ 实习经历}
+
+\datedsubsection{\textbf{\href{https://www.aliyun.com/product/ons}{消息中间件团队 - 阿里巴巴云智能集团}}\enspace(软件开发实习生)}{2023.7 -- 至今}
+负责阿里云MNS、RocketMQ等消息产品的的功能开发、性能测试以及RocketMQ开源社区的贡献和维护, 致力于为集团内外客户提供高可用的消息服务。
+\begin{itemize}[parsep=0.2ex]
+  \item 主导了集群限流服务的实现, 并负责接入MNS消息服务, 包括元数据管理/限流管理/指标采集模块;
+  \item 实现了基于令牌桶算法的结合的\textbf{多级融合限流方案}, 有效保证MNS单实例/集群TPS稳定性;
+  \item 实现了基于一致性Hash算法的限流上报策略, \textbf{缓解rehash开销}, 同时TokenServer采用主备对等节点部署, \textbf{保证限流服务的高可用性};
+  \item 限流模块已接入MNS, 已通过日常、预发环境测试; 限流模块设计良好，计划接入其他消息产品;
+  \item 负责RocketMQ对接RocksDB的性能压测和控制台工具的开发, 为多产品内核统一提供前置支持;\enspace\githubicon{https://github.com/apache/rocketmq/pull/7180}
+\end{itemize}
+
+\section{\faUsers\ 开源经历}
+
+\datedsubsection{\textbf{\href{https://summerofcode.withgoogle.com/programs/2022/projects/VIJfR79a}{MariaDB - Google开源之夏}}\enspace (C++、JSON、列式存储)}{2022.6 -- 2022.9}
+ColumnStore是基于MariaDB构建的分布式列式存储引擎. 已连续举办18年全球知名开源活动, 2022年共5,155次注册, 1209份申请被Google接纳, 大陆仅40人左右中选\textbf{(中选率3.3\%)}.
+\begin{itemize}[parsep=0.2ex]
+  \item \textbf{个人贡献:}设计并实现了\verb|SELECT|子句中的JSON函数, 完成了MariaDB的JSON函数下推;
+  \item \textbf{资源封装:}利用RAII进行资源封装, 使之具备更强的\textbf{内聚性}和\textbf{资源安全性};
+  \item \textbf{变量优化:}完成\verb|malloc|到\verb|alloca|分配的部分迁移, 保证\textbf{小字符串处理}的效率和内存安全性;
   \item \textbf{类型适配:}适配JSON/MariaDB布尔类型兼容性问题, 系统间JSON类型传递完全打通;
   \item \textbf{完备测试:}利用内置的测试框架MTR进行全面的单元测试, 测试覆盖了函数的\textbf{关键和边缘分支};
-  \item \textbf{最终成果:} 8600+代码成功\textbf{合并到代码主分支}, 最终在Release 22.08.2发布;\enspace\githubicon{https://github.com/mariadb-corporation/mariadb-columnstore-engine/pull/2425}
-  \item 提交合并了3个JSON相关补丁, 确保用户在10.3\textasciitilde 10.9版本的兼容性和性能改进:
-        \begin{itemize}
-          \item 修复了由于未考虑编码长度导致JSON\_TYPE结果被截断的问题;\enspace\githubicon{https://github.com/MariaDB/server/pull/2172}
-          \item 修复了由于\verb|uint_32|类型溢出导致JSON\_*结果被截断的问题;\enspace\githubicon{https://github.com/MariaDB/server/pull/2226}
-          \item 重构了JSON\_MERGE\_PATCH, 移除其中的冗余赋值操作;\enspace\githubicon{https://github.com/MariaDB/server/pull/2209}
-        \end{itemize}
+  \item \textbf{最终成果:} 8000+代码成功\textbf{合并到代码主分支}, 最终在Release 22.08.2发布;\enspace\githubicon{https://github.com/mariadb-corporation/mariadb-columnstore-engine/pull/2425}
+  \item 提交合并了3个JSON相关补丁, 确保用户在10.3\textasciitilde 10.9版本的兼容性和稳定性:\enspace\githubicon{https://github.com/MariaDB/server/pull/2172}\githubicon{https://github.com/MariaDB/server/pull/2226}\githubicon{https://github.com/MariaDB/server/pull/2209}
 \end{itemize}
-\datedsubsection{\underline{\textbf{\href{https://summer-ospp.ac.cn\#/org/orgdetail/1bf2ea9b-fdf1-45a5-bbb1-d81827445986/}{JuiceFS - 中科院开源之夏}}}\quad Go / Concurrency / File System}{2022.7 -- 2022.10}
+
+\datedsubsection{\textbf{\href{https://summer-ospp.ac.cn\#/org/orgdetail/1bf2ea9b-fdf1-45a5-bbb1-d81827445986/}{JuiceFS - 中科院开源之夏}}\enspace(Go、文件系统、并发)}{2022.7 -- 2022.10}
 JuiceFS是数据/元数据分离的分布式文件系统, 用户友好且易于部署, 存储和元数据服务可灵活配置切换.
-\begin{itemize}[parsep=0.3ex]
+\begin{itemize}[parsep=0.2ex]
   \item \textbf{个人贡献:}设计实现了doctor诊断子命令, 执行\verb|juicefs doctor ...|帮助更好地定位错误;
-  \item \textbf{多元采集:}支持Kernel / FS / Mount等信息的收集, 以及log / pprof等运行时指标的采样;
+  \item \textbf{多元采集:}支持Kernel、FS、Mount等信息的收集, 以及log、pprof等运行时指标的采样;
   \item \textbf{流程优化:}利用并发技术, 完成指标采样异步化改造, \textbf{保证执行效率和用户体验};
   \item \textbf{最终成果:}测试覆盖了doctor的关键分支, PR成功\textbf{合入主分支};\enspace\githubicon{https://github.com/juicedata/juicefs/pull/2360}
 \end{itemize}
-\datedsubsection{\underline{\textbf{\href{https://github.com/opencurve/curve}{Curve - 云原生计算基金会}}}\quad C++ / Concurrency / File System}{2023.2 -- 至今}
-网易数帆团队开源的分布式存储系统, 支持块/文件存储. 与JuiceFS不同, Curve内置元数据引擎.
-\begin{itemize}[parsep=0.3ex]
-  \item \textbf{回滚支持:}为创建FS操作添加回滚支持, 保证了资源的及时释放, \textbf{增量分支覆盖率$\geq$80\%};\enspace\githubicon{https://github.com/opencurve/curve/pull/2206}
-  \item \textbf{流程优化:}剔除冗余上传, 利用并发等待cache上传完毕, \textbf{理想情况下}节省50\%空间和调用;\enspace\githubicon{https://github.com/opencurve/curve/pull/2252}
-  \item 熟悉Curve对读写锁、自旋锁和线程池的封装和原理; 了解Curve缓存淘汰策略的封装和并发支持思路; 了解Curve对于一致性保证的措施;
+
+\datedsubsection{\textbf{\href{https://github.com/opencurve/curve}{Curve - 云原生计算基金会}}\enspace (C++、文件系统、并发)}{2023.2 -- 2023.5}
+\begin{itemize}[parsep=0.2ex]
+  \item 为创建FS操作添加回滚支持, 保证了资源的及时释放, \textbf{增量分支覆盖率$\geq$80\%};\enspace\githubicon{https://github.com/opencurve/curve/pull/2206}
+  \item 剔除冗余上传, 利用并发等待cache上传完毕, \textbf{理想情况下}节省50\%空间和调用; \enspace\githubicon{https://github.com/opencurve/curve/pull/2252}
+  \item 文件缓存并发异步读取优化，提高文件数据读取效率; \enspace\githubicon{https://github.com/opencurve/curve/pull/2421}
+  \item 了解Curve缓存淘汰策略、熟悉Curve对读写锁、自旋锁和线程池的封装和原理;
 \end{itemize}
+
 \section{\faCogs\ 相关技能}
-\begin{itemize}[parsep=0.3ex]
-  \item 擅长使用C++语言, 了解STL容器的使用和原理, 了解OOP设计原理, 了解Go/Python;
-  \item 熟悉Git使用, 适应分支开发工作流, 熟悉GDB, 能够利用断点、变量等命令进行调试;
+\begin{itemize}
+  \item 擅长使用C++语言, 了解STL的使用和原理, 了解OOP设计原理, 了解Go、Python;
+  \item 熟练Git分支开发工作流, 熟悉GDB, 能够利用断点、变量等命令进行调试;
   \item 熟悉Linux使用, 能够使用常见的监控命令来了解服务状态, 了解Shell的使用;
-  \item 熟悉GoogleTest使用, 遵循测试保证重构思想, 了解测试驱动开发(TDD)流程;
+  \item 熟悉GoogleTest, Mock测试, 遵循测试保证重构思想, 了解测试驱动开发(TDD)流程;
 \end{itemize}
-\section{\faHeartO\ 获奖情况}
-\datedline{华中科技大学腾讯奖学金}{2022 年12 月}
-\datedline{\textit{二等奖(获奖率6.6\%)}, 华为软件精英挑战赛武长赛区}{2022 年4 月}
-\datedline{华中科技大学社会实践优秀个人}{2022 年3 月}
-\datedline{华中科技大学研究生一等奖学金}{2021 年9 月}
+
+% \section{\faHeartO\ 获奖情况}
+% \datedline{华中科技大学腾讯奖学金}{2022 年12 月}
+% \datedline{\textit{二等奖(获奖率6.6\%)}, 华为软件精英挑战赛武长赛区}{2022 年4 月}
+% \datedline{华中科技大学研究生一等奖学金}{2021 年9 月}
 \end{document}
 
