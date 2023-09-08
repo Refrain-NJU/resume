@@ -27,15 +27,15 @@
 
 \section{\faBuilding\ 实习经历}
 
-\datedsubsection{\textbf{\href{https://www.aliyun.com/product/ons}{消息中间件团队 - 阿里巴巴云智能集团}}\enspace(软件开发实习生)}{2023.7 -- 2023.9}
-负责阿里云MNS、RocketMQ等消息产品的的功能开发、性能测试和开源贡献工作, 致力于为集团内外客户提供高可用的消息服务。
+\datedsubsection{\textbf{\href{https://www.aliyun.com/product/ons}{消息中间件团队 - 阿里巴巴云智能集团}}\enspace(研发实习生)}{2023.7 -- 至今}
+负责消息产品MNS和RocketMQ限流接入、性能测试和社区贡献，致力于客户提供高可用的消息服务.
 \begin{itemize}[parsep=0.2ex]
-  \item 主导了集群限流服务的实现, 并负责接入MNS消息服务, 包括元数据管理/限流管理/指标采集模块;
-  \item 实现了基于令牌桶算法的\textbf{多级融合限流方案}, 有效保证MNS单实例/集群TPS稳定性;
-  \item 基于一致性Hash算法优化限流Key上报策略, \textbf{缓解rehash导致的限流降级}, 保证限流服务的高可用;
-  \item 设置多级功能开关配合白名单机制, 保证限流服务的\textbf{可控性}, 确保限流功能\textbf{平滑接入上线};
-  \item 限流模块已接入MNS, 已通过日常、预发环境测试; 限流模块设计良好, 计划接入其他消息产品;
-  \item 负责RocketMQ对接RocksDB的性能压测和控工具适配, 为多产品内核统一提供前置支持;\enspace\githubicon{https://github.com/apache/rocketmq/pull/7180}\githubicon{https://github.com/apache/rocketmq/pull/7276}
+  \item 实现了基于令牌桶算法的单机-集群\textbf{多级限流方案}, 有效保证MNS实例/集群TPS稳定性;
+  \item 采用了一致性哈希的TPS上报策略与TokenServer集群部署模式, \textbf{保证集群限流服务的高可用性};
+  \item 设计了多级功能开关和白名单机制, 确保限流功能\textbf{平滑迁移上线}, 提升存量用户体验;
+  \item 合理评估潜在限流降级风险, 针对性地对进行了容灾/时延/长稳测试, \textbf{效果均达预期};
+  \item MNS集群限流于9.5日成功\textbf{上线广州Region}, 运行状况良好, 计划陆续上线其他Region;
+  \item 负责RocketMQ元数据存储引擎升级的压测和适配, 针对海量Topic场景提出\textbf{元数据检索, 批量路由注册}等兼容性改进, 为多产品内核统一提供前置支持. \enspace\githubicon{https://github.com/apache/rocketmq/pull/7276} \githubicon{https://github.com/apache/rocketmq/pull/7325}
 \end{itemize}
 
 \section{\faUsers\ 开源经历}
