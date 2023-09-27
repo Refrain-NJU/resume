@@ -34,8 +34,8 @@
 	a4paper,
 	left=0.7in,
 	right=0.7in,
-	top=0.4in,
-	bottom=0.4in,
+	top=0.2in,
+	bottom=0.1in,
 	nohead
 ]{geometry}
 
